@@ -11,10 +11,11 @@ class LoginSerializer(serializers.Serializer):
 
 class RegisterSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField()
+    username = serializers.CharField()
 
     class Meta:
         model = User
-        fields = ("email", "password", "confirm_password")
+        fields = ("email", "password", "confirm_password", "username")
 
     def create(self, validated_data: dict) -> User:
         password = validated_data.pop("password")

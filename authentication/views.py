@@ -1,3 +1,6 @@
+import string
+import random
+
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
@@ -23,6 +26,10 @@ class RegisterView(APIView):
     serializer_class = RegisterSerializer
 
     def post(self, request: Request) -> Response:
+        request.data["username"] = "".join(
+            random.choices(string.ascii_uppercase + string.digits, k=10)
+        )
+
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.validated_data.pop("confirm_password")

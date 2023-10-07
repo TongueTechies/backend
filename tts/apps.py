@@ -10,7 +10,7 @@ class TtsConfig(AppConfig):
 
     def ready(self) -> None:
         textmapper, hparams, device, synthtrain = check("tts/tts-model")
-        cache.set("textmapper", textmapper)
-        cache.set("hparams", hparams)
-        cache.set("device", device)
-        cache.set("synthtrain", synthtrain)
+        cache.set("textmapper", textmapper, None)
+        cache.set("hparams", hparams, None)
+        cache.set("device", device, None)
+        cache.set("synthtrain", synthtrain, None)

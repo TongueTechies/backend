@@ -24,6 +24,7 @@ urlpatterns = [
     path("api/auth/", include("authentication.urls")),
     path("api/translation/", include("translation.urls")),
     path("api/tts/", include("tts.urls")),
+    path("api/news/", include("news.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
