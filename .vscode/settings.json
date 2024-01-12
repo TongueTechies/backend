@@ -1,14 +1,14 @@
 {
-    // Format on save
-    "python.formatting.provider": "black",
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "[python]": {
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+  // Format on save
+  "python.formatting.provider": "black",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
-  },
+    "editor.defaultFormatter": "ms-python.black-formatter"
   }
+}
